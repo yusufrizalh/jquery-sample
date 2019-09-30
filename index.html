@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Sample</title>
+    <!-- import jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("h1").css("color", "#123abc").text("Hello, Inixindo!");
+            $("#yellow").css("background", "yellow");
+            $(".green").css("background", "green");
+            $('input[type="password"]').css("background", "yellow");
+            alert("Apa kabar anda?");
+            console.log("Belajar jQuery!");
+
+            $("p").dblclick(function() {
+                $(this).slideUp();
+            });
+
+            $("p").hover(function() {
+                $(this).addClass("highlight");
+            }, function() {
+                $(this).removeClass("highlight");
+            });
+
+            var a = 0;  // nilai awal 
+            $('input[type="text"]').keypress(function() {
+                $("span").text(a + 1);
+                $("p").show().fadeOut();
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        p {
+            padding: 20px;
+            font: 20px sans-serif;
+            background: #f2f2f2;
+        }
+        p.highlight {
+            background: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <p id="yellow">This is a paragraph.</p>
+    <p class="green">This is another paragraph.</p>
+    <p>This is one more paragraph.</p>
+
+    <label>Name: <input type="text"></label> <br>
+    <label>Password: <input type="password"></label> <br> 
+    <input type="submit" value="Login"> <br> <br> 
+
+    <p>Click Me and I Will Disappear.</p>
+    <p>Click Me and I Will Disappear.</p>
+    <p>Click Me and I Will Disappear.</p>
+
+    <br>
+
+    <input type="text">
+    <div>Chars: <span>0</span></div> 
+    <p>Keypress is triggered!</p>
+</body>
+</html>

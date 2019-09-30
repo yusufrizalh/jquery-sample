@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- import jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // function untuk menyembunyikan
+            $(".btn-hide").click(function() {
+                $("p.normal").hide();
+                $("p.fast").hide("fast");
+                $("p.slow").hide("slow");
+                $("p.very-fast").hide(50);
+                $("p.very-slow").hide(3000);
+            });
+
+            // function untuk menampilkan
+            $(".btn-show").click(function() {
+                $("p.normal").show();
+                $("p.fast").show("fast");
+                $("p.slow").show("slow");
+                $("p.very-fast").show(100);
+                $("p.very-slow").show(2000);
+            });
+        });
+    </script>
+
+    <style>
+        p {
+            padding: 15px;
+            background: #f0e68c;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn-hide">Hide</button>
+    <button type="button" class="btn-show">Show</button>
+
+    <p class="very-fast">This paragraph will show/hide with very fast speed.</p>
+    <p class="normal">This paragraph will show/hide with default speed.</p>
+    <p class="fast">This paragraph will show/hide with fast speed.</p>
+    <p class="slow">This paragraph will show/hide with slow speed.</p>
+    <p class="very-slow">This paragraph will show/hide with very slow speed.</p>
+</body>
+</html>

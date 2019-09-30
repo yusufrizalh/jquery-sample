@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Animation</title>
+    <!-- import jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("button.animate").click(function() {
+                $("img").animate({
+                    top: "+=30px", 
+                    left: "+=30px",
+                    width: "+=100px",
+                    height: "+=100px"
+                });
+                // $(".box").animate({
+                //     width: "300px", 
+                //     height: "300px", 
+                //     marginLeft: "150px", 
+                //     borderWidth: "10px", 
+                //     opacity: 0.5
+                // });
+            });
+            $("button.reset").click(function() {
+                $("img").removeAttr("style");
+            });
+        });
+    </script>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            margin-left: 30px;
+            position: relative;
+        }
+        /* .box {
+            width: 100px;
+            height: 100px;
+            background: #9d7ede;
+            margin-top: 30px;
+            border-style: solid;
+            border-color: #6f40ce;
+        } */
+    </style>
+</head>
+<body>
+    <button type="button" class="animate">Start Animation</button>
+    <button type="button" class="reset">Reset Animation</button>
+    <p>
+        <img src="./images/gabumon.png" alt="Gabumon">
+    </p>
+    <!-- <div class="box"></div> -->
+</body>
+</html>

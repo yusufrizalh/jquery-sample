@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- import jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".btn-toggle").click(function() {
+                $("p.normal").slideToggle();   // gabungan hide and show 
+                $("p.fast").slideToggle("fast");
+                $("p.slow").slideToggle("slow");
+                $("p.very-fast").slideToggle(100);
+                $("p.very-slow").slideToggle(2000);
+            });
+        });
+    </script>
+    <style>
+        p {
+            padding: 16px;
+            background: #b0c4de;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" class="btn-toggle">Toggle Button</button>
+    <p class="very-fast">This paragraph will show/hide with very fast speed.</p>
+    <p class="normal">This paragraph will show/hide with default speed.</p>
+    <p class="fast">This paragraph will show/hide with fast speed.</p>
+    <p class="slow">This paragraph will show/hide with slow speed.</p>
+    <p class="very-slow">This paragraph will show/hide with very slow speed.</p>
+</body>
+</html>

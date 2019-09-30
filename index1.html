@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Events</title>
+    <!-- import jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // on keypress
+            var a = 0;      // nilai awal
+            $('input[type="text"]').keypress(function () {
+                $("span").text(a += 1); // ditambah 1
+            });
+            
+            // on change
+            $("select").change(function() {
+                var selected = $(this).find(":selected").val();
+                alert("City: " + selected);
+            });
+
+            // on submit
+            $("form").submit(function(event) {
+                var regex = /^[a-zA-Z]+$/;
+                var myValue = $("#fullname").val();
+                if(regex.test(myValue) == false) {
+                    $("#result").html('<p class="error"> Not Valid!</p>')
+                        .show().fadeOut(3000);
+                        event.preventDefault();
+                }
+            });
+
+            // on resize
+            $(window).resize(function() {
+                $(window).bind("resize", function() {
+                    $("h3").text("Window width: " + $(window).width() + ", " + 
+                        "Window height: " + $(window).height());
+                });
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text">
+    <div>
+        Chars: <span>0</span> <!-- menampilkan hasil -->
+    </div>
+
+    <form>
+        <label>City:</label>
+        <select>
+            <option>London</option>
+            <option>Mumbay</option>
+            <option>Paris</option>
+            <option>New York</option>
+            <option>Tokyo</option>
+        </select>
+    </form>
+    <br> <br>
+    <form action="#" method="POST" id="users">
+        <label for="fullname">Fullname</label>
+        <input type="text" name="fullname" id="fullname"> <br> 
+        <input type="submit" value="Submit">
+        <div id="result"></div>
+    </form>
+    <br> <br>
+
+    <h3>Coba resize halaman browser</h3>
+</body>
+
+</html>
